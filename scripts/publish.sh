@@ -43,7 +43,7 @@ done
 
 rm -rf pkg work/extracted
 mkdir -p pkg/DEBIAN pkg/usr/bin work/extracted
-tar xzf "$local_tarball" -C work/extracted
+tar xzf "$local_tarball" --no-same-owner -C work/extracted
 # martin only: the tarball's martin-cp and mbtiles tools aren't asked for.
 install -m 755 work/extracted/martin pkg/usr/bin/martin
 
